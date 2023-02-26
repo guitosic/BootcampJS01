@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de FOR</h1>
+    <button onclick="Contar()">Ok</button>
+    <p id="resultado"></p>
+
+    <hr>
+
+    <h1>Atividade 01</h1>
+    <h3>Criar um sistema que, ao apertar um botão, leia o valor final e imprima esse valor de 1 até o valor informado</h3>
+    <button onclick="Atividade01()">OK Atividade 01</button>
+    <p id="resultado01"></p>
+
+    <hr>
+
+    <h1>Atividade 02</h1>
+    <h3>Criar um sistema que ao apertar um botão leia o valor final e o valor inicial de uma contagem. Imprimir na tag P resultado03 a contagem apenas dos valores impares</h3>
+    <button onclick="Atividade02()">OK Atividade 02</button>
+    <p id="resultado03"></p>
+
+    <script>
+        function Contar()
+        {
+            var L = ""
+            for(var i = 0; i <= 10; i++)
+            {
+                console.log(i)
+                L = L + i + "<br>"
+            }
+            document.getElementById("resultado").innerHTML = L
+        }
+        function Atividade01()
+        {
+            var final = prompt("Digite o valor final: ")
+            var A = ""
+            for(var i = 1; i<=final; i++ )
+            {
+                if(i<final)
+                {
+                    A = A + i + " - "
+                }
+                else
+                {
+                    A = A + i
+                }
+            }
+            document.getElementById("resultado01").innerHTML = A
+        }
+        function Atividade02()
+        {
+            var inicial = prompt("Digite o valor inicial: ")
+            var final = prompt("Digite o valor final: ")
+            var A = ""
+            // var primeiro = true
+
+            // if(inicial % 2 == 0)
+            // {
+            //     inicial = parseInt(inicial) + 1
+            // }
+            // else
+            // {
+            //     inicial = parseInt(inicial) + 0
+            // }            
+            // for(var i = inicial; i<=final; i=i+2)
+            // {
+            //      if(primeiro)
+            //      {
+            //          A = A + i
+            //          primeiro = false
+            //      }
+            //      else
+            //      {
+            //          A = A + " - " + i
+            //      }
+            // }
+
+            for(var i = parseInt(inicial); i<=parseInt(final); i++ )
+            {
+                if(i % 2 == 1)
+                {
+                    // A = A + i + " - "
+                    if(i==final)
+                    {
+                        A = A + i
+                    }
+                    else if(i==final-1)
+                    {
+                        A = A + i
+                    }
+                    else
+                    {
+                        A = A + i + " - "
+                    }
+                }
+            }
+            console.log(A)
+            document.getElementById("resultado03").innerHTML = A
+        }
+    </script>
+</body>
+</html>
